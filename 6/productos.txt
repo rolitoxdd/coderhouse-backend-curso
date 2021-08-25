@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Escuadra",
+    "price": 123.45,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg"
+  },
+  {
+    "title": "Calculadora",
+    "price": 234.56,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Casio_fx-85WA_20050529.jpg"
+  },
+  {
+    "title": "Globo Terraqueo",
+    "price": 345.67,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/0d/GlobeSK.jpg"
+  }
+]
