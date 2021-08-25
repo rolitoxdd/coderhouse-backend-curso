@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 class Archivo {
   constructor(nombreArchivo) {
-    this.nombreArchivo = nombreArchivo;
+    this.nombreArchivo = nombreArchivo; // guardo el nombre del archivo
     this.data = (async () => {
       try {
         const data = await fs.readFile(nombreArchivo, "utf-8"); // esperamos la lectura del texto
@@ -19,17 +19,17 @@ class Archivo {
     await fs.writeFile(this.nombreArchivo, JSON.stringify(this.data, null, 2)); // grabando en el archivo, el nuevo objeto con ids
   }
   async leer() {
-    console.log(await this.data);
+    console.log(await this.data); //muestro la informacion del archivo
     if (this.data.length == 0) {
-      return this.data;
+      return this.data; // en caso de archivo vacio o inexistente, muestro array vacio
     }
   }
   async borrar() {
     try {
-      this.data = [];
-      fs.rm(this.nombreArchivo);
+      this.data = []; // cambio la data a array vacio
+      await fs.rm(this.nombreArchivo); //elimino archivo
     } catch (err) {
-      console.error(err.message);
+      console.error(err.message); // en caso de error muestro el mensaje en pantalla
     }
   }
 }
