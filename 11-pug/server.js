@@ -1,20 +1,19 @@
 const express = require("express");
-const handlebars = require("express-handlebars");
 
 const app = express();
 const PORT = 8080;
 const api = express.Router();
 
-app.engine(
-  "hbs",
-  handlebars({
-    extname: ".hbs",
-    defaultLayout: "index.hbs",
-    layoutsDir: __dirname + "/views/layouts",
-    partialsDir: __dirname + "/views/partials",
-  })
-);
-app.set("view engine", "hbs");
+// app.engine(
+//   "hbs",
+//   handlebars({
+//     extname: ".hbs",
+//     defaultLayout: "index.hbs",
+//     layoutsDir: __dirname + "/views/layouts",
+//     partialsDir: __dirname + "/views/partials",
+//   })
+// );
+app.set("view engine", "pug");
 app.set("views", "./views");
 
 let items = [];

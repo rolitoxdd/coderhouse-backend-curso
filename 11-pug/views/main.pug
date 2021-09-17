@@ -1,0 +1,27 @@
+extends layouts/index.pug 
+block main 
+    h1 Vista de productos
+
+
+    div(class="container")
+        if emptyList
+            div.alert.alert-warning(role="alert") La lista está vacia
+        else
+            table.table
+                thead 
+                    tr 
+                        th(scope="col") Title
+                        th(scope="col") Price
+                        th(scope="col") thumbnail
+                tbody 
+                    each item in items
+                        tr 
+                            th item.title
+                            td item.price 
+                            td
+                                img(
+                                    width=50 
+                                    src=item.thumbnail 
+                                    alt="") 
+                </tbody>
+            </table>
