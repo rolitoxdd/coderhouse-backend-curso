@@ -16,8 +16,8 @@ block main
                 tbody 
                     each item in items
                         tr 
-                            th item.title
-                            td item.price 
+                            th !{item.title}
+                            td !{item.price} 
                             td
                                 img(
                                     width=50 
