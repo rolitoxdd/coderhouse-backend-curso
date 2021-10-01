@@ -1,0 +1,16 @@
+{
+  "timestamp": 1633056263134,
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "lapiz",
+      "descripcion": "alskdjlsakdjsalkdjsaljkd",
+      "codigo": "",
+      "foto": "http://google.com/foto.jpg",
+      "precio": 439543,
+      "stock": 3,
+      "timestamp": 1633056708615
+    },
+    null
+  ]
+}
