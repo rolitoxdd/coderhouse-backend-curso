@@ -4,6 +4,36 @@ const Mensaje = require("./models/mensajes");
 const fs = require("fs/promises");
 const uuid = require("uuid");
 
+class MemoryPersistence {
+  constructor() {
+    this.productos = []
+    this.mensajes = []
+  }
+  async addProduct({ title, price, thumbnail }) {
+    const id = uuid();
+    return this.productos.push({title, price, thumbnail, id})
+  }
+  async getProduct(id) {
+    return this.productos.find((x) => x.id == id);
+  }
+  async listProducts() {
+    return this.productos
+  }
+  async updateProduct({ title, price, thumbnail, id }) {
+    this.productos.find((x) => x.id == id) = { title, price, thumbnail, id };
+  }
+  async deleteProduct(id) {
+    const index = this.productos.findIndex((x) => x.id == id)
+    return this.productos.splice(index, 1)
+  }
+  async listMensajes() {
+    return this.mensajes;
+  }
+  async addMensaje(msg) {
+    return this.mensajes.push(msg);
+  }
+}
+
 class FsPersistence {
   constructor() {
     this.productos = "./DB/productos.json"
@@ -263,6 +293,7 @@ class MongoAtlas {
 }
 
 module.exports = {
+  MemoryPersistence,
   FsPersistence,
   Sqlite,
   MySql,

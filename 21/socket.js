@@ -8,6 +8,9 @@ const {
 const persistencia = +process.env.PERSISTENCIA;
 let db;
 switch (persistencia) {
+  case 0:
+    db = new MemoryPersistence();
+    break;
   case 1:
     db = new FsPersistence();
     break;
@@ -22,8 +25,6 @@ switch (persistencia) {
     break;
   case 6:
     db = new MongoAtlas();
-    break;
-  default:
     break;
 }
 
