@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <form action="/api/productos/guardar/" method="post"> -->
+    <style>
+        b {
+            color: blue;
+        }
+
+        span {
+            color: brown;
+        }
+
+        i {
+            color: green;
+        }
+    </style>
+
+    <div class="container">
+        <h2>Ingreso de productos</h2>
+        <form id="product-form">
+            <div class="form-group">
+
+                <label for="title">Title
+                    <input name="title" type="text" class="form-control">
+                </label>
+            </div>
+            <div class="form-group">
+
+                <label for="price">Price
+                    <input name="price" type="number" class="form-control">
+                </label>
+            </div>
+            <div class="form-group">
+
+                <label for="thumbnail">Thumbnail
+                    <input name="thumbnail" type="url" class="form-control">
+                </label>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+
+        <hr>
+        <h2>Vista de productos</h2>
+
+
+        <div class="data-container"></div>
+        <br>
+
+        <hr>
+        <div id="chat">
+            <h2 id="titulo-chat">Chat</h2>
+            <div class="container">
+
+                <ul id="mensajes" class="list-group">
+
+                </ul>
+                <form id="chat-form">
+                    <input type="email" placeholder="email" name="email">
+                    <input type="text" placeholder="nombre" name="nombre">
+                    <input type="text" placeholder="apellido" name="apellido">
+                    <input type="number" placeholder="edad" name="edad">
+                    <input type="text" placeholder="alias" name="alias">
+                    <input type="url" placeholder="avatar" name="avatar">
+                    <input type="text" placeholder="mensaje" name="mensaje">
+                    <button class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
